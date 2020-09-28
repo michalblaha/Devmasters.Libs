@@ -50,9 +50,14 @@ namespace Devmasters.Cache.LocalMemory
             if (value != null)
             {
                 if (this.OnUpdateCacheCallback != null)
-                    cache.Add(new CacheItem( key, value), new CacheItemPolicy() { AbsoluteExpiration = datetime, UpdateCallback =  this.OnUpdateCacheCallback});
+                {
+                    var cp = new CacheItemPolicy();
+                    cp.AbsoluteExpiration = datetime;
+                    cp.UpdateCallback = this.OnUpdateCacheCallback;
+                    cache.Set(new CacheItem(key, value), cp);
+                }
                 else
-                    cache.Add(new CacheItem( key, value), new CacheItemPolicy() { AbsoluteExpiration = datetime});
+                    cache.Set(new CacheItem(key, value), new CacheItemPolicy() { AbsoluteExpiration = datetime });
             }
             else
                 BaseCache<T>.Logger.Warning(new Logging.LogMessage()

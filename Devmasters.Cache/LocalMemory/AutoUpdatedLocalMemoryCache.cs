@@ -8,7 +8,7 @@ using System.Runtime.Caching;
 namespace Devmasters.Cache.LocalMemory
 {
     [Serializable()]
-    public class AutoUpdatedLocalMemoryCache<T> : LocalMemoryCache<T>
+    public class AutoUpdatedLocalMemoryCache<T> : AutoUpdatebleCache<T>
         where T : class
     {
 
@@ -19,11 +19,11 @@ namespace Devmasters.Cache.LocalMemory
             : this(expiration, cacheKey, contentFunc, null)
         { }
         public AutoUpdatedLocalMemoryCache(TimeSpan expiration, string cacheKey, System.Func<object, T> contentFunc, object parameters)
-            : base(expiration, cacheKey, contentFunc, parameters,null)
+            : base(new LocalMemoryCacheProvider<T>(null), expiration, cacheKey, contentFunc, parameters)
         {
             //rewrite provider initialization
-            this.provider = new LocalMemory.LocalMemoryCacheProvider<T>(this.UpdateCacheAgain);
-            this.provider.Init();
+            //this.provider = new LocalMemory.LocalMemoryCacheProvider<T>(this.UpdateCacheAgain);
+            //this.provider.Init();
 
         }
 
