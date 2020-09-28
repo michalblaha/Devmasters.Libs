@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -15,6 +16,10 @@ namespace Devmasters
         public static string DEFAULTCOLLECTIONDIVIDER = "|";
         public static string Space = " ";
 
+        public const string lf = "\n";
+        public const string cr = "\r";
+        public const string crlf = cr + lf;
+        public const string br = @"<br>";
 
         private static CultureInfo[] scis = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
         public static CultureInfo USCulture = new System.Globalization.CultureInfo("en-US");
@@ -40,14 +45,14 @@ namespace Devmasters
             return sb.ToString();
         }
 
-        static string crlf = cr + lf;
-        static string br = @"<br>";
+        
         public static string FormatPlainTextForArticle(string plainText)
         {
-            string lf = "\n";
-            string cr = "\r";
-            string crlf = cr + lf;
-            string br = @"<br>";
+            //string lf = "\n";
+            //string cr = "\r";
+            //string crlf = cr + lf;
+            //string br = @"<br>";
+            
             string newBody;
             newBody = RemoveHTML(plainText);
             newBody = ReplaceCRFL(newBody, br);
@@ -588,8 +593,7 @@ namespace Devmasters
 
 
 
-        static string lf = "\n";
-        static string cr = "\r";
+        
 
 
         static Regex findEntityRegex = new Regex("(&[a-zA-Z0-9#]*;)", RegexOptions.Compiled);
