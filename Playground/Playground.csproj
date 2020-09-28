@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B0D1C2AE-5E15-4159-BD41-6797486C342E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Playground</RootNamespace>
+    <AssemblyName>Playground</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Devmasters.Batch\Devmasters.Batch.csproj">
+      <Project>{29d25c13-ff8d-4b50-a9fe-e09efdf02867}</Project>
+      <Name>Devmasters.Batch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Cache\Devmasters.Cache.csproj">
+      <Project>{537e48d4-6704-46c6-b521-d2b344abfb26}</Project>
+      <Name>Devmasters.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Collections\Devmasters.Collections.csproj">
+      <Project>{7e3c7ce2-3183-444b-b75d-9963357ddc5c}</Project>
+      <Name>Devmasters.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Core\Devmasters.Core.csproj">
+      <Project>{4ce1ac4a-ee6c-4b15-9f54-249174fc9bca}</Project>
+      <Name>Devmasters.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Crypto\Devmasters.Crypto.csproj">
+      <Project>{ac8c026a-c1bd-438a-954c-72c3f9008eee}</Project>
+      <Name>Devmasters.Crypto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Dates\Devmasters.DT.csproj">
+      <Project>{16e85b74-34c3-4ce9-a83d-a51248f5439a}</Project>
+      <Name>Devmasters.DT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.DBUpgrader\Devmasters.DBUpgrader.csproj">
+      <Project>{6a443afd-c910-47a0-a718-5b5195fa1206}</Project>
+      <Name>Devmasters.DBUpgrader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Enums\Devmasters.Enums.csproj">
+      <Project>{3d2fc75c-d420-44ac-981c-2db6165e2a8d}</Project>
+      <Name>Devmasters.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Image\Devmasters.Imaging.csproj">
+      <Project>{3f457538-0658-488e-8be4-d6d1fbfb34ed}</Project>
+      <Name>Devmasters.Imaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.IO\Devmasters.IO.csproj">
+      <Project>{7dde713f-5725-41fb-8b51-5bed26ae255f}</Project>
+      <Name>Devmasters.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Lang\Devmasters.Lang.csproj">
+      <Project>{0e6c66db-d106-4c44-bd04-f7a0835311d3}</Project>
+      <Name>Devmasters.Lang</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Logging\Devmasters.Logging.csproj">
+      <Project>{ad2977e3-10a9-4d72-807a-20dc273df566}</Project>
+      <Name>Devmasters.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Net\Devmasters.Net.csproj">
+      <Project>{df837e1a-22dd-4d43-a8d6-88771be6c713}</Project>
+      <Name>Devmasters.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

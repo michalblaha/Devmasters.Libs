@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net472;net48</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>2.1.2</Version>
+    <Copyright>(c) Devmasters s.r.o.</Copyright>
+    <AssemblyVersion>2.1.2.0</AssemblyVersion>
+    <FileVersion>2.1.2.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.24" />
+    <PackageReference Include="IPNetwork2" Version="2.5.226" />
+    <PackageReference Include="log4net" Version="2.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Devmasters.Core\Devmasters.Core.csproj" />
+    <ProjectReference Include="..\Devmasters.Dates\Devmasters.DT.csproj" />
+    <ProjectReference Include="..\Devmasters.Logging\Devmasters.Logging.csproj" />
+  </ItemGroup>
+
+</Project>
