@@ -29,11 +29,12 @@ namespace Playground
 
         static void Main(string[] args)
         {
-            Devmasters.TextUtil.FormatPlainTextForArticle(Devmasters.TextUtil.ShortenText(@"Předmětem veřejné zakázky je realizace protipovodňových opatření formou dodávky a montáže varovného a informačního systému a jeho napojení do Jednotného systému varování a informování. 
-", 200));
+
+            var s = Devmasters.DT.Util.Ago(DateTime.Now.AddHours(-3), System.Globalization.CultureInfo.GetCultureInfo("cs"));
+
             return;
             TestAutoUpdatableCacheMem();return;
-            TestAutoUpdatableCache();return;
+            TestAutoUpdatableCacheFile();return;
             var grps = EnumTools.Groups(typeof(Tester));
             var grpsLiche = EnumTools.InGroup(typeof(Tester), "liche");
             var grpsLiche2 = EnumTools.InGroup<Tester>("liche");

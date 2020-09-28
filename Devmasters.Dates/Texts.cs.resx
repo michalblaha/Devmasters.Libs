@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DaysAgo0" xml:space="preserve">
+    <value>Dnes</value>
+  </data>
+  <data name="DaysAgo1" xml:space="preserve">
+    <value>Včera</value>
+  </data>
+  <data name="DaysAgo2" xml:space="preserve">
+    <value>Předevčírem</value>
+  </data>
+  <data name="DaysAgo3" xml:space="preserve">
+    <value>Před 3 dny</value>
+  </data>
+  <data name="DaysAgo4" xml:space="preserve">
+    <value>Před 4-mi dny</value>
+  </data>
+  <data name="DaysAgo5" xml:space="preserve">
+    <value>Před 5 dny</value>
+  </data>
+  <data name="DaysAgo6" xml:space="preserve">
+    <value>Před 6 dny</value>
+  </data>
+  <data name="DaysAgo7" xml:space="preserve">
+    <value>Před týdnem</value>
+  </data>
+  <data name="DaysAgoMore" xml:space="preserve">
+    <value>Před {0} dny</value>
+  </data>
+  <data name="eighth" xml:space="preserve">
+    <value>osmý</value>
+  </data>
+  <data name="eighthShort" xml:space="preserve">
+    <value>8.</value>
+  </data>
+  <data name="eleventh" xml:space="preserve">
+    <value>jedenáctý</value>
+  </data>
+  <data name="eleventhShort" xml:space="preserve">
+    <value>11.</value>
+  </data>
+  <data name="fifth" xml:space="preserve">
+    <value>pátý</value>
+  </data>
+  <data name="fifthShort" xml:space="preserve">
+    <value>5.</value>
+  </data>
+  <data name="first" xml:space="preserve">
+    <value>první</value>
+  </data>
+  <data name="firstShort" xml:space="preserve">
+    <value>1.</value>
+  </data>
+  <data name="fourth" xml:space="preserve">
+    <value>čtvrtý</value>
+  </data>
+  <data name="fourthShort" xml:space="preserve">
+    <value>4.</value>
+  </data>
+  <data name="HoursAgo0" xml:space="preserve">
+    <value>Před chvilkou</value>
+  </data>
+  <data name="HoursAgo1" xml:space="preserve">
+    <value>Před hodinou</value>
+  </data>
+  <data name="HoursAgo2" xml:space="preserve">
+    <value>Před 2 hodinami</value>
+  </data>
+  <data name="HoursAgo3" xml:space="preserve">
+    <value>Před 3 hodinami</value>
+  </data>
+  <data name="HoursAgo4" xml:space="preserve">
+    <value>Před 4 hodinami</value>
+  </data>
+  <data name="HoursAgo5" xml:space="preserve">
+    <value>Před 5 hodinami</value>
+  </data>
+  <data name="InDays0" xml:space="preserve">
+    <value>Dnes</value>
+  </data>
+  <data name="InDays1" xml:space="preserve">
+    <value>Zítra</value>
+  </data>
+  <data name="InDays2" xml:space="preserve">
+    <value>za 2 dny</value>
+  </data>
+  <data name="InDays3" xml:space="preserve">
+    <value>za 3 dny</value>
+  </data>
+  <data name="InDays4" xml:space="preserve">
+    <value>za 4 dny</value>
+  </data>
+  <data name="InDays5" xml:space="preserve">
+    <value>za 5 dní</value>
+  </data>
+  <data name="InDays6" xml:space="preserve">
+    <value>za 6 dní</value>
+  </data>
+  <data name="InDays7" xml:space="preserve">
+    <value>za týden</value>
+  </data>
+  <data name="InDaysMore" xml:space="preserve">
+    <value>za {0} dní</value>
+  </data>
+  <data name="InHours0" xml:space="preserve">
+    <value>Za chvíli</value>
+  </data>
+  <data name="InHours1" xml:space="preserve">
+    <value>za 1 hodinu</value>
+  </data>
+  <data name="InHours2" xml:space="preserve">
+    <value>za 2 hodiny</value>
+  </data>
+  <data name="InHours3" xml:space="preserve">
+    <value>za 3 hodiny</value>
+  </data>
+  <data name="InHours4" xml:space="preserve">
+    <value>za 4 hodiny</value>
+  </data>
+  <data name="InHours5" xml:space="preserve">
+    <value>za 5 hodin</value>
+  </data>
+  <data name="ninth" xml:space="preserve">
+    <value>devátý</value>
+  </data>
+  <data name="ninthShort" xml:space="preserve">
+    <value>9.</value>
+  </data>
+  <data name="second" xml:space="preserve">
+    <value>druhý</value>
+  </data>
+  <data name="secondShort" xml:space="preserve">
+    <value>2.</value>
+  </data>
+  <data name="seventh" xml:space="preserve">
+    <value>sedmý</value>
+  </data>
+  <data name="seventhShort" xml:space="preserve">
+    <value>7.</value>
+  </data>
+  <data name="sixth" xml:space="preserve">
+    <value>šestý</value>
+  </data>
+  <data name="sixthShort" xml:space="preserve">
+    <value>6.</value>
+  </data>
+  <data name="tenth" xml:space="preserve">
+    <value>desátý</value>
+  </data>
+  <data name="tenthShort" xml:space="preserve">
+    <value>10.</value>
+  </data>
+  <data name="third" xml:space="preserve">
+    <value>třetí</value>
+  </data>
+  <data name="thirdShort" xml:space="preserve">
+    <value>3.</value>
+  </data>
+  <data name="twelfth" xml:space="preserve">
+    <value>dvanáctý</value>
+  </data>
+  <data name="twelfthShort" xml:space="preserve">
+    <value>12.</value>
+  </data>
+</root>

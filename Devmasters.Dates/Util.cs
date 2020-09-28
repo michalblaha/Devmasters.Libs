@@ -19,7 +19,7 @@ namespace Devmasters.DT
         {
             lock (lockObj)
             {
-                rm = new System.Resources.ResourceManager("Devmasters.Texts", typeof(Util).Assembly);
+                rm = new System.Resources.ResourceManager("Devmasters.DT.Texts", typeof(Util).Assembly);
             }
 
             //zdroj: Zákon č. 245/2000 Sb o statních svátcích
