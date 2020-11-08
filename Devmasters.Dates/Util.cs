@@ -11,8 +11,12 @@ namespace Devmasters.DT
         Hour
     }
 
+
     public static class Util
     {
+
+
+
         static object lockObj = new object();
         static System.Resources.ResourceManager rm = null;
         static Util()

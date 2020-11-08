@@ -51,7 +51,7 @@ namespace Devmasters.Cache
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("e");
+                    BaseCache<T>.Logger.Error("AutoUpdatableCache GetDataFromContentFunction",e);
                 }
                 finally
                 {
@@ -83,9 +83,9 @@ namespace Devmasters.Cache
             {
                 this.ForceRefreshCache(base.GetDataFromContentFunction());
             }
-            catch (Exception)
+            catch (Exception ee)
             {
-                Console.WriteLine("e");
+                    BaseCache<T>.Logger.Error("AutoUpdatableCache expirationTimer_Elapsed",ee);
             }
             finally
             {

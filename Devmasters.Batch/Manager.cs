@@ -12,7 +12,7 @@ namespace Devmasters.Batch
         public static void DoActionForAll<TSource>(
             IEnumerable<TSource> source,
             System.Func<TSource, ActionOutputData> action,
-            bool parallel = true)
+            bool parallel = true,int? maxDegreeOfParallelism = null)
         {
             System.Func<TSource, object, ActionOutputData> coreAction = (t, o) =>
             {
@@ -23,7 +23,7 @@ namespace Devmasters.Batch
                 source, coreAction, null,
                 DefaultOutputWriter,
                 new ActionProgressWriter(0.1f).Write,
-                parallel);
+                parallel, maxDegreeOfParallelism:maxDegreeOfParallelism);
         }
 
 
@@ -31,13 +31,13 @@ namespace Devmasters.Batch
             IEnumerable<TSource> source,
             System.Func<TSource, TActionParam, ActionOutputData> action,
             TActionParam actionParameters,
-            bool parallel = true)
+            bool parallel = true,int? maxDegreeOfParallelism = null)
         {
             DoActionForAll<TSource, TActionParam>(
                 source, action, actionParameters,
                 DefaultOutputWriter,
                 new ActionProgressWriter(0.1f).Write,
-                parallel);
+                parallel, maxDegreeOfParallelism:maxDegreeOfParallelism);
         }
 
         public static void DoActionForAll<TSource>(

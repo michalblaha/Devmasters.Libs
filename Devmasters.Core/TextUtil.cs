@@ -1142,5 +1142,28 @@ namespace Devmasters
             return res;
         }
 
+                public static int CountWords(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return 0;
+            MatchCollection collection = Regex.Matches(s, @"[\S]+");
+            return collection.Count;
+        }
+        public static string[] GetWords(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return new string[] { };
+            MatchCollection collection = Regex.Matches(s, @"[\S]+");
+            List<string> words = new List<string>();
+            for (int i = 0; i < collection.Count; i++)
+            {
+                if (collection[i].Value.Length > 0)
+                    words.Add(collection[i].Value);
+            }
+
+            return words.ToArray();
+        }
+
+
     }
 }

@@ -29,8 +29,16 @@ namespace Playground
 
         static void Main(string[] args)
         {
-
-            var s = Devmasters.DT.Util.Ago(DateTime.Now.AddHours(-3), System.Globalization.CultureInfo.GetCultureInfo("cs"));
+            Devmasters.IO.SimpleZipArchive z = new Devmasters.IO.SimpleZipArchive(@"c:\\!\a.zip", "ina.txt");
+            z.Write(DateTime.Now.ToString());
+            z.Write("-");
+            z.WriteLine("EOF");
+            System.Threading.Thread.Sleep(1000);
+                        z.Write(DateTime.Now.ToString());
+            z.Write("-");
+            z.WriteLine("EOF");
+            z.Flush();
+            z.Dispose();
 
             return;
             TestAutoUpdatableCacheMem();return;
@@ -72,7 +80,7 @@ namespace Playground
 
                 static void TestAutoUpdatableCacheFile()
         {
-            var fc = new Devmasters.Cache.File.AutoUpdateFileCache<string>(@"c:\!\", 
+            var fc = new Devmasters.Cache.File.AutoUpdatedFileCache<string>(@"c:\!\", 
                 TimeSpan.FromSeconds(1),"keycache",
                 (o)=> {
                     //System.Threading.Thread.Sleep(500+DateTime.Now.Millisecond / 100);

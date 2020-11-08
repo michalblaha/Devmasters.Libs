@@ -36,6 +36,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devmasters.IO", "Devmasters
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devmasters.Cache", "Devmasters.Cache\Devmasters.Cache.csproj", "{537E48D4-6704-46C6-B521-D2B344ABFB26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devmasters.AutoUpdateLauncher", "Devmasters.AutoUpdateLauncher\Devmasters.AutoUpdateLauncher.csproj", "{BD2095F4-AF4C-4D92-9C17-68C9E18D471C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,10 @@ Global
 		{537E48D4-6704-46C6-B521-D2B344ABFB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{537E48D4-6704-46C6-B521-D2B344ABFB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{537E48D4-6704-46C6-B521-D2B344ABFB26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD2095F4-AF4C-4D92-9C17-68C9E18D471C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD2095F4-AF4C-4D92-9C17-68C9E18D471C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD2095F4-AF4C-4D92-9C17-68C9E18D471C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD2095F4-AF4C-4D92-9C17-68C9E18D471C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

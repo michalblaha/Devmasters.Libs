@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using ICSharpCode.SharpZipLib.Zip;
+
 namespace Devmasters.IO
 {
     public class SimpleZipArchive : IDisposable
@@ -16,10 +18,10 @@ namespace Devmasters.IO
 
 
         FileStream zipFile = null;
-        ZipArchive archive = null;
-        ZipArchiveEntry entry = null;
-        TextWriter writer = null;
-        TextWriter swriter = null;
+        ZipOutputStream archive = null;
+        ZipEntry entry = null;
+        //TextWriter writer = null;
+        //TextWriter swriter = null;
         public SimpleZipArchive(string archive, string packedFileName, bool overwrite = false)
         {
             this.ArchiveFileName = archive;
@@ -31,32 +33,37 @@ namespace Devmasters.IO
                 fi.Directory.Create();
 
             this.zipFile = new FileStream(this.tmpFile, FileMode.Create);
-            this.archive = new ZipArchive(zipFile, ZipArchiveMode.Create);
-            this.entry = this.archive.CreateEntry(packedFileName, CompressionLevel.Optimal);
-            this.writer = new StreamWriter(this.entry.Open());
-            this.swriter = StreamWriter.Synchronized(this.writer);
+            this.archive = new ZipOutputStream(zipFile);
+            this.archive.SetLevel(9);
+
+            this.entry = new ZipEntry(packedFileName);//this.archive.CreateEntry(packedFileName, CompressionLevel.Optimal);
+
+            this.archive.PutNextEntry(this.entry);
+            //this.writer = new StreamWriter(this.entry.Open());
+            //this.swriter = StreamWriter.Synchronized(this.writer);
 
         }
         public void Flush()
         {
-            this.swriter.Flush();
+            this.archive.Flush();
         }
 
         public void Write(string text)
         {
-            this.swriter.Write(text);
+            byte[] data = System.Text.UTF8Encoding.UTF8.GetBytes(text);
+            this.archive.Write(data,0,data.Length);
         }
         public void WriteLine(string text = null)
         {
             if (string.IsNullOrEmpty(text))
-                this.swriter.WriteLine();
+                this.Write("\n");
             else
-                this.swriter.WriteLine(text);
+                this.Write(text+"\n");
         }
 
         private void Finish()
         {
-            this.swriter.Flush();
+            this.Flush();
             System.Threading.Thread.Sleep(50);
             CloseAll();
             System.Threading.Thread.Sleep(50);
@@ -70,11 +77,8 @@ namespace Devmasters.IO
 
         private void CloseAll()
         {
-            if (this.swriter != null)
-                this.Dispose();
-
-            if (this.writer != null)
-                this.writer.Dispose();
+            if (this.entry != null)
+                this.archive.CloseEntry();
 
             if (this.archive != null)
                 this.archive.Dispose();
