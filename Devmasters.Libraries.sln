@@ -38,6 +38,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devmasters.Cache", "Devmast
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devmasters.AutoUpdateLauncher", "Devmasters.AutoUpdateLauncher\Devmasters.AutoUpdateLauncher.csproj", "{BD2095F4-AF4C-4D92-9C17-68C9E18D471C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devmasters.Cache.Elastic", "Devmasters.Cache.ElasticCache\Devmasters.Cache.Elastic.csproj", "{196AE174-27CE-43FF-8CAE-0DCC78B57F8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{BD2095F4-AF4C-4D92-9C17-68C9E18D471C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD2095F4-AF4C-4D92-9C17-68C9E18D471C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD2095F4-AF4C-4D92-9C17-68C9E18D471C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{196AE174-27CE-43FF-8CAE-0DCC78B57F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{196AE174-27CE-43FF-8CAE-0DCC78B57F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{196AE174-27CE-43FF-8CAE-0DCC78B57F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{196AE174-27CE-43FF-8CAE-0DCC78B57F8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

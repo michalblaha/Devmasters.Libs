@@ -54,6 +54,10 @@
       <Project>{29d25c13-ff8d-4b50-a9fe-e09efdf02867}</Project>
       <Name>Devmasters.Batch</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Devmasters.Cache.ElasticCache\Devmasters.Cache.Elastic.csproj">
+      <Project>{196ae174-27ce-43ff-8cae-0dcc78b57f8f}</Project>
+      <Name>Devmasters.Cache.Elastic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Devmasters.Cache\Devmasters.Cache.csproj">
       <Project>{537e48d4-6704-46c6-b521-d2b344abfb26}</Project>
       <Name>Devmasters.Cache</Name>

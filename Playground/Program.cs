@@ -27,22 +27,33 @@ namespace Playground
             four
         }
 
+        public class TestClass
+        {
+            public class Inner { public string inProp { get; set; } = "inner1"; public int year { get; set; } = 2020; }
+            public int number { get; set; } = 10;
+            public string text { get; set; } = "asdfjj !! ěščřřžžýáí";
+            public string[] arrayT { get; set; } = new string[] { "one", "two", "tři" };
+            public DateTime DayBefore { get; set; } = DateTime.Now.AddDays(-1);
+
+            public Inner[] arrayInn { get; set; } = new Inner[] { new Inner(), new Inner() { inProp="inner2" } };
+            public Inner innerObj { get; set; } = new Inner();
+
+        }
+
         static void Main(string[] args)
         {
-            Devmasters.IO.SimpleZipArchive z = new Devmasters.IO.SimpleZipArchive(@"c:\\!\a.zip", "ina.txt");
-            z.Write(DateTime.Now.ToString());
-            z.Write("-");
-            z.WriteLine("EOF");
-            System.Threading.Thread.Sleep(1000);
-                        z.Write(DateTime.Now.ToString());
-            z.Write("-");
-            z.WriteLine("EOF");
-            z.Flush();
-            z.Dispose();
+            var ec = new Devmasters.Cache.Elastic.ElasticCache<TestClass>(
+                new[] { "http://10.10.100.160:9200", "http://10.10.100.161:9200" }, "DevmastersCache",
+                TimeSpan.FromMinutes(1),"test",
+                o => { return new TestClass(); },
+                providerId: "Devmasters.Playground");
+            var x = ec.Get();
+            var x2 = ec.Get();
+                
 
             return;
-            TestAutoUpdatableCacheMem();return;
-            TestAutoUpdatableCacheFile();return;
+            TestAutoUpdatableCacheMem(); return;
+            TestAutoUpdatableCacheFile(); return;
             var grps = EnumTools.Groups(typeof(Tester));
             var grpsLiche = EnumTools.InGroup(typeof(Tester), "liche");
             var grpsLiche2 = EnumTools.InGroup<Tester>("liche");
@@ -51,12 +62,14 @@ namespace Playground
 
         }
 
-        
-                static void TestAutoUpdatableCacheMem()
+
+        static void TestAutoUpdatableCacheMem()
         {
-            var fc = new Devmasters.Cache.LocalMemory.AutoUpdatedLocalMemoryCache<string>( 
-                TimeSpan.FromSeconds(1),"keycache",
-                (o)=> {
+            var fc = new Devmasters.Cache.Elastic.AutoUpdatebleElasticCache<string>(
+                new[]{"http://10.10.100.160:9200","http://10.10.100.161:9200" },"DevmastersCache",
+                TimeSpan.FromSeconds(1), "keycache",
+                (o) =>
+                {
                     //System.Threading.Thread.Sleep(500+DateTime.Now.Millisecond / 100);
                     return DateTime.Now.ToString("HH:mm:ss:fff");
                 }
@@ -78,11 +91,12 @@ namespace Playground
 
         }
 
-                static void TestAutoUpdatableCacheFile()
+        static void TestAutoUpdatableCacheFile()
         {
-            var fc = new Devmasters.Cache.File.AutoUpdatedFileCache<string>(@"c:\!\", 
-                TimeSpan.FromSeconds(1),"keycache",
-                (o)=> {
+            var fc = new Devmasters.Cache.File.AutoUpdatedFileCache<string>(@"c:\!\",
+                TimeSpan.FromSeconds(1), "keycache",
+                (o) =>
+                {
                     //System.Threading.Thread.Sleep(500+DateTime.Now.Millisecond / 100);
                     return DateTime.Now.ToString("HH:mm:ss:fff");
                 }
