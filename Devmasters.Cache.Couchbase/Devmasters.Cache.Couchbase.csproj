@@ -2,15 +2,16 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net472;net48</TargetFrameworks>
-    <AssemblyName>Devmasters.Cache.Elastic</AssemblyName>
-    <RootNamespace>Devmasters.Cache.Elastic</RootNamespace>
+    <AssemblyName>Devmasters.Cache.Couchbase</AssemblyName>
+    <RootNamespace>Devmasters.Cache.Couchbase</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.3</Version>
+    <Version>2.0.0</Version>
     <Copyright>(c) Devmasters s.r.o.</Copyright>
-    <PackageReleaseNotes>- short typename in key</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CouchbaseNetClient" Version="2.7.22" />
     <PackageReference Include="Devmasters.Batch" Version="2.1.1" />
     <PackageReference Include="Devmasters.Cache" Version="2.1.2" />
     <PackageReference Include="Elasticsearch.Net" Version="7.8.0" />

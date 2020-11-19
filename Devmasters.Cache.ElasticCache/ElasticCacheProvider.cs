@@ -137,7 +137,7 @@ namespace Devmasters.Cache.Elastic
             if (string.IsNullOrEmpty(key))
                 throw new ArgumentNullException("key");
 
-            key = typeof(T).FullName + "-|-" + key;
+            key = typeof(T).Name + "-|-" + key;
             if (key.Length > 500)
                 return Devmasters.Crypto.Hash.ComputeHashToBase64(key);
             else
