@@ -5,7 +5,7 @@
     <AssemblyName>Devmasters.Cache.Elastic</AssemblyName>
     <RootNamespace>Devmasters.Cache.Elastic</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.3</Version>
+    <Version>2.0.4</Version>
     <Copyright>(c) Devmasters s.r.o.</Copyright>
     <PackageReleaseNotes>- short typename in key</PackageReleaseNotes>
   </PropertyGroup>

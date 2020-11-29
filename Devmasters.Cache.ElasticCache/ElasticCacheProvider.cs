@@ -16,7 +16,7 @@ namespace Devmasters.Cache.Elastic
         public static bool ESTraceLoggerExists = log4net.LogManager.Exists("Devmasters.Cache.Elastic.Trace")?.Logger?.IsEnabledFor(log4net.Core.Level.Debug) == true;
 
         ElasticClient client = null;
-        System.Timers.Timer cleaning = new System.Timers.Timer(1000 * 60 * 60 * 6); //6 hours
+        System.Timers.Timer cleaning = new System.Timers.Timer(1000 * 60 * 60 * 1); //1 hours
         public ElasticCacheProvider(string[] elasticServers, string dbName,
             int numberOfReplicas = 2, int numberOfShards = 3, string providerId = "")
         {
@@ -132,12 +132,18 @@ namespace Devmasters.Cache.Elastic
 
         }
 
+        string typeName = null;
         private string fixKey(string key)
         {
             if (string.IsNullOrEmpty(key))
                 throw new ArgumentNullException("key");
-
-            key = typeof(T).Name + "-|-" + key;
+            if (typeName == null)
+            {
+                typeName = typeof(T).Name;
+                if (typeName.EndsWith("`1"))
+                    typeName = typeName.Substring(0, typeName.Length - 2);
+            }
+            key = typeName + "." + key;
             if (key.Length > 500)
                 return Devmasters.Crypto.Hash.ComputeHashToBase64(key);
             else

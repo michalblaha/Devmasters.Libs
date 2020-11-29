@@ -6,50 +6,52 @@ namespace Devmasters.Lang
 {
     public class Plural
     {
-        public static string Get(int number, Devmasters.IResourceManager2 resources, string key)
+        public static string Get(long number, Devmasters.IResourceManager2 resources, string key)
         {
             return Get(number, CultureInfo.CurrentUICulture, resources, key);
         }
-        public static string Get(int number, CultureInfo culture, Devmasters.IResourceManager2 resources, string key)
+
+        public static string Get(long number, CultureInfo culture, Devmasters.IResourceManager2 resources, string key)
         {
             return Get(number, resources.Manager.GetString(key, culture));
         }
 
-        public static string Get(int number, string value, CultureInfo culture = null)
+        public static string Get(long number, string value, CultureInfo culture = null)
         {
             return Get(number, culture ?? CultureInfo.CurrentUICulture, value.Split(';'));
         }
 
-        public static string Get(int number, params string[] value)
+        public static string Get(long number, params string[] value)
         {
             return Get(number, CultureInfo.CurrentUICulture, value);
         }
-        public static string Get(int number, CultureInfo culture,params string[] value)
+
+        public static string Get(long number, CultureInfo culture,params string[] value)
         {
             return Get(number, false, culture, value);
         }
 
 
-        public static string GetWithZero(int number, Devmasters.IResourceManager2 resources, string key)
+        public static string GetWithZero(long number, Devmasters.IResourceManager2 resources, string key)
         {
             return GetWithZero(number, CultureInfo.CurrentUICulture, resources, key);
         }
-        public static string GetWithZero(int number, CultureInfo culture, Devmasters.IResourceManager2 resources, string key)
+        public static string GetWithZero(long number, CultureInfo culture, Devmasters.IResourceManager2 resources, string key)
         {
             return GetWithZero(number, resources.Manager.GetString(key, culture));
         }
 
-        public static string GetWithZero(int number, string value)
+        public static string GetWithZero(long number, string value)
         {
             return GetWithZero(number, value.Split(';'));
         }
-        public static string GetWithZero(int number, params string[] value)
+        public static string GetWithZero(long number, params string[] value)
         {
             return Get(number, true, CultureInfo.CurrentUICulture, value);
         }
 
 
-        public static string Get(int number, bool withZero, CultureInfo culture, params string[] val)
+        public static string Get(long number, bool withZero, CultureInfo culture, params string[] val)
         {
             return Get(number, new PluralDef()
             {
@@ -58,7 +60,7 @@ namespace Devmasters.Lang
                 Values = val
             });
         }
-        public static string Get(int number, PluralDef def)
+        public static string Get(long number, PluralDef def)
         {
             if (def.Values == null || def.Values.Length == 0)
                 return String.Empty;
@@ -104,7 +106,7 @@ namespace Devmasters.Lang
         }
 
 
-        private static string GetCzechPlural(int number, params string[] val)
+        private static string GetCzechPlural(long number, params string[] val)
         {
             string[] plural = val;
             if (plural.Length != 3)
@@ -119,7 +121,7 @@ namespace Devmasters.Lang
 
             return FormatString(plural[2], number);
         }
-        private static string GetPolandPlural(int number, params string[] val)
+        private static string GetPolandPlural(long number, params string[] val)
         {
             string[] plural = val;
             if (plural.Length != 3)
@@ -134,7 +136,7 @@ namespace Devmasters.Lang
 
             return FormatString(plural[2], number);
         }
-        private static string GetEnglishPlural(int number, params string[] val)
+        private static string GetEnglishPlural(long number, params string[] val)
         {
             string[] plural = val;
             if (plural.Length != 2)
@@ -143,7 +145,7 @@ namespace Devmasters.Lang
             return number == 1 ? FormatString(plural[0], number) : FormatString(plural[1], number);
         }
 
-        private static string GetGermanPlural(int number, params string[] val)
+        private static string GetGermanPlural(long number, params string[] val)
         {
             string[] plural = val;
             if (plural.Length != 2)
@@ -152,14 +154,14 @@ namespace Devmasters.Lang
             return number == 1 ? FormatString(plural[0], number) : FormatString(plural[1], number);
         }
 
-        private static string GetJapanesePlural(int number, params string[] val)
+        private static string GetJapanesePlural(long number, params string[] val)
         {
             string[] plural = val;
             if (plural.Length != 1)
                 throw new InvalidResourceException("Invalid german resource. The resource string  " + val + " doesn't contains 1 options.");
             return FormatString(val[0], number);
         }
-        private static string GetRuPlural(int number, params string[] val)
+        private static string GetRuPlural(long number, params string[] val)
         {
             string[] plural = val;
             if (plural.Length != 3)
@@ -175,7 +177,7 @@ namespace Devmasters.Lang
         }
 
 
-        private static string FormatString(string text, int number)
+        private static string FormatString(string text, long number)
         {
             if (text.Contains("{") && text.Contains("}"))
                 return string.Format(text, number);
