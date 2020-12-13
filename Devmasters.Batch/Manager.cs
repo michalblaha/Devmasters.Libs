@@ -12,7 +12,7 @@ namespace Devmasters.Batch
         public static void DoActionForAll<TSource>(
             IEnumerable<TSource> source,
             System.Func<TSource, ActionOutputData> action,
-            bool parallel = true,int? maxDegreeOfParallelism = null)
+            bool parallel = true, int? maxDegreeOfParallelism = null, System.Action<Exception, TSource> onExceptionAction = null)
         {
             System.Func<TSource, object, ActionOutputData> coreAction = (t, o) =>
             {
@@ -23,7 +23,7 @@ namespace Devmasters.Batch
                 source, coreAction, null,
                 DefaultOutputWriter,
                 new ActionProgressWriter(0.1f).Write,
-                parallel, maxDegreeOfParallelism:maxDegreeOfParallelism);
+                parallel, maxDegreeOfParallelism, onExceptionAction:onExceptionAction);
         }
 
 
@@ -31,13 +31,13 @@ namespace Devmasters.Batch
             IEnumerable<TSource> source,
             System.Func<TSource, TActionParam, ActionOutputData> action,
             TActionParam actionParameters,
-            bool parallel = true,int? maxDegreeOfParallelism = null)
+            bool parallel = true, int? maxDegreeOfParallelism = null, System.Action<Exception, TSource> onExceptionAction = null)
         {
             DoActionForAll<TSource, TActionParam>(
                 source, action, actionParameters,
                 DefaultOutputWriter,
                 new ActionProgressWriter(0.1f).Write,
-                parallel, maxDegreeOfParallelism:maxDegreeOfParallelism);
+                parallel, maxDegreeOfParallelism, onExceptionAction:onExceptionAction);
         }
 
         public static void DoActionForAll<TSource>(
@@ -47,7 +47,7 @@ namespace Devmasters.Batch
     System.Action<ActionProgressData> progressOutputFunc,
     bool parallel = true,
     int? maxDegreeOfParallelism = null,
-    bool cancelOnError = false, string prefix = "", String postfix = "")
+    bool cancelOnError = false, string prefix = "", String postfix = "", System.Action<Exception, TSource> onExceptionAction = null)
         {
             System.Func<TSource, object, ActionOutputData> coreAction = (t, o) =>
             {
@@ -58,7 +58,7 @@ namespace Devmasters.Batch
                 source, coreAction, null,
                 logOutputFunc,
                 progressOutputFunc,
-                parallel, maxDegreeOfParallelism, cancelOnError, prefix, postfix);
+                parallel, maxDegreeOfParallelism, cancelOnError, prefix, postfix, onExceptionAction);
 
         }
 
@@ -70,7 +70,7 @@ namespace Devmasters.Batch
             System.Action<ActionProgressData> progressOutputFunc,
             bool parallel = true,
             int? maxDegreeOfParallelism = null,
-            bool cancelOnError = false, string prefix = null, string postfix = null)
+            bool cancelOnError = false, string prefix = null, string postfix = null, System.Action<Exception, TSource> onExceptionAction = null)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -113,7 +113,13 @@ namespace Devmasters.Batch
                         }
                         catch (Exception e)
                         {
-                            Devmasters.Logging.Logger.Root.Error("DoActionForAll paraller action error", e);
+                            if (onExceptionAction == null)
+                                onExceptionAction = (ex,val) 
+                                        => Devmasters.Logging.Logger.Root.Error(
+                                            $"DoActionForAll paraller action error for {Newtonsoft.Json.JsonConvert.SerializeObject(val)}",
+                                            ex);
+                            if (onExceptionAction != null)
+                                onExceptionAction(e, value);
                             if (cancelOnError)
                                 cts.Cancel();
                         }

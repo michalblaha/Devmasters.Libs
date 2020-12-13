@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net472;net48</TargetFrameworks>
+		<AssemblyName>Devmasters.SpeechToText</AssemblyName>
+		<RootNamespace>Devmasters.SpeechToText</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>2.2.1</Version>
+		<Copyright>(c) Devmasters s.r.o.</Copyright>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+	</ItemGroup>
+
+</Project>

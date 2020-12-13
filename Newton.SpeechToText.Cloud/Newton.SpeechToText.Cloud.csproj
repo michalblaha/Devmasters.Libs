@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net472;net48</TargetFrameworks>
+		<AssemblyName>Newton.SpeechToText.Cloud</AssemblyName>
+		<RootNamespace>Newton.SpeechToText.Cloud</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>2.2.0</Version>
+		<Copyright>(c) Devmasters s.r.o.</Copyright>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Term.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Devmasters.SpeechToText\Devmasters.SpeechToText.csproj" />
+	</ItemGroup>
+
+</Project>

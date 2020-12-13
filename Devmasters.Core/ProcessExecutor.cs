@@ -25,6 +25,10 @@ namespace Devmasters
             : this(processInfo, timeOutInSec, string.Empty, string.Empty, false)
         { }
 
+        public delegate void OutputDataHandler(object sender, DataReceivedEventArgs e);
+
+        public event OutputDataHandler StandardOutputDataReceived;
+        public event OutputDataHandler ErrorDataReceived;
 
         public ProcessExecutor(ProcessStartInfo processInfo, int timeOutInSec, string outputLogFile, string errorLogFile, bool logAll)
         {
@@ -45,11 +49,13 @@ namespace Devmasters
         void  process_ErrorDataReceived(object sender, DataReceivedEventArgs e)
         {
             sbErr.AppendLine(e.Data);
+            ErrorDataReceived?.Invoke(this, e);
         }
 
         void  process_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
             sbOut.AppendLine(e.Data);
+            StandardOutputDataReceived?.Invoke(this, e);
         }
 
         void process_Exited(object sender, EventArgs e)

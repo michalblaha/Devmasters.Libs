@@ -106,6 +106,18 @@
       <Project>{df837e1a-22dd-4d43-a8d6-88771be6c713}</Project>
       <Name>Devmasters.Net</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Devmasters.SpeechToText\Devmasters.SpeechToText.csproj">
+      <Project>{21b346f1-ae7f-4543-a9fd-d4bf3ff8223f}</Project>
+      <Name>Devmasters.SpeechToText</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KaldiASR.SpeechToText\KaldiASR.SpeechToText.csproj">
+      <Project>{c1d10726-8f5d-4589-8dc4-235068534019}</Project>
+      <Name>KaldiASR.SpeechToText</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Newton.SpeechToText.Cloud\Newton.SpeechToText.Cloud.csproj">
+      <Project>{db029554-aee4-4aff-8434-d3327bf51b6f}</Project>
+      <Name>Newton.SpeechToText.Cloud</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
