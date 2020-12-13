@@ -5,7 +5,7 @@
 		<AssemblyName>Devmasters.SpeechToText</AssemblyName>
 		<RootNamespace>Devmasters.SpeechToText</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>2.2.1</Version>
+		<Version>2.2.3</Version>
 		<Copyright>(c) Devmasters s.r.o.</Copyright>
 	</PropertyGroup>
 
