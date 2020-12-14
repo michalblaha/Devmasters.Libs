@@ -5,14 +5,14 @@
     <AssemblyName>Devmasters.Cache.Couchbase</AssemblyName>
     <RootNamespace>Devmasters.Cache.Couchbase</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.1</Version>
+    <Version>2.0.2</Version>
     <Copyright>(c) Devmasters s.r.o.</Copyright>
-    <PackageReleaseNotes></PackageReleaseNotes>
+	  <PackageReleaseNotes>referenced packages updates</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CouchbaseNetClient" Version="2.7.22" />
-    <PackageReference Include="Devmasters.Batch" Version="2.1.1" />
+    <PackageReference Include="Devmasters.Batch" Version="2.1.2" />
     <PackageReference Include="Devmasters.Cache" Version="2.1.2" />
     <PackageReference Include="Elasticsearch.Net" Version="7.8.0" />
     <PackageReference Include="NEST" Version="7.8.0" />

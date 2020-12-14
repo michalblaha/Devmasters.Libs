@@ -5,8 +5,9 @@
 		<AssemblyName>KaldiASR.SpeechToText</AssemblyName>
 		<RootNamespace>KaldiASR.SpeechToText</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>2.2.1</Version>
+		<Version>2.2.2</Version>
 		<Copyright>(c) Devmasters s.r.o.</Copyright>
+		<PackageReleaseNotes>referenced packages updates</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>

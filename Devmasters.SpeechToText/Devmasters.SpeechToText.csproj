@@ -5,8 +5,9 @@
 		<AssemblyName>Devmasters.SpeechToText</AssemblyName>
 		<RootNamespace>Devmasters.SpeechToText</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>2.2.3</Version>
+		<Version>2.2.4</Version>
 		<Copyright>(c) Devmasters s.r.o.</Copyright>
+		<PackageReleaseNotes>referenced packages updates</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>

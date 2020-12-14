@@ -5,8 +5,9 @@
 		<AssemblyName>Newton.SpeechToText.Cloud</AssemblyName>
 		<RootNamespace>Newton.SpeechToText.Cloud</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>2.2.0</Version>
+		<Version>2.2.1</Version>
 		<Copyright>(c) Devmasters s.r.o.</Copyright>
+		<PackageReleaseNotes>referenced packages updates</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
