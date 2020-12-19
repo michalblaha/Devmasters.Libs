@@ -24,9 +24,9 @@ namespace Devmasters
             char paramValueDelimiter = '=')
         {
             Arguments = commandLineArguments;
+            Mandatory = mandatory;
             ParametrPrefix = parametrPrefix;
             ParamValueDelimiter = paramValueDelimiter;
-
             Init();
         }
 
