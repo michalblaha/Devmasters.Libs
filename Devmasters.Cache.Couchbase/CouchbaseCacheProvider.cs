@@ -40,7 +40,8 @@ namespace Devmasters.Cache.Couchbase
         {
             if (string.IsNullOrEmpty(key))
                 throw new ArgumentNullException("key");
-            if (key.Length > 250)
+            int length = System.Text.Encoding.UTF8.GetByteCount(key);
+            if (length > 240)
                 return Devmasters.Crypto.Hash.ComputeHashToBase64(key);
             else
                 return key;

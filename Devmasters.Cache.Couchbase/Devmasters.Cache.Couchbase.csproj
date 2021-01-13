@@ -5,7 +5,7 @@
     <AssemblyName>Devmasters.Cache.Couchbase</AssemblyName>
     <RootNamespace>Devmasters.Cache.Couchbase</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.2</Version>
+    <Version>2.0.3</Version>
     <Copyright>(c) Devmasters s.r.o.</Copyright>
 	  <PackageReleaseNotes>referenced packages updates</PackageReleaseNotes>
   </PropertyGroup>
