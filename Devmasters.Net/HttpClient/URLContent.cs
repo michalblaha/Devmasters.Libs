@@ -541,7 +541,17 @@ namespace Devmasters.Net.HttpClient
                 //logger_Debug("Request started, loading data");
 
                 //Open request, load data
-                _httpResponse = (HttpWebResponse)_httprequest.GetResponse();
+                try
+                {
+                    _httpResponse = (HttpWebResponse)_httprequest.GetResponse();
+
+                }
+                catch (WebException e_h)
+                {
+                    _httpResponse = (HttpWebResponse)e_h.Response; 
+                    if (_httpResponse.StatusCode != HttpStatusCode.Redirect) 
+                        throw (e_h); 
+                }
 
                 _responseParams = new ParametersContainer(_httpResponse.Headers, _httpResponse.Cookies);
                 this.ContentType = _httpResponse.ContentType;
